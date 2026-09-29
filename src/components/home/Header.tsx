@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import WalletStatusChip from '@/components/common/WalletStatusChip';
+import GlobalSearch from '@/components/common/GlobalSearch';
 import { Link } from 'react-router';
 
 const navLinks = [
@@ -65,6 +66,12 @@ export default function Header() {
 						)
 					)}
 				</nav>
+
+				{/* Global header search (#1053) — searches keys, creators,
+				    and transaction hashes with grouped dropdown results. */}
+				<div className="hidden md:block flex-1 max-w-xs mx-4">
+					<GlobalSearch />
+				</div>
 
 				{/* CTA — #686: a persistent wallet status chip replaces the bare
 				    Connect link. WalletStatusChip renders the same link itself when
